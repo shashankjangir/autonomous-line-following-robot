@@ -1,0 +1,43 @@
+name: Validate project
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run analyzer and controller checks
+        run: python3 scripts/check.py
+
+  firmware:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        profile: [baseline, peripherals]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+        with:
+          version: '1.x'
+      - name: Install tested Uno core
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr@1.8.8
+      - name: Compile baseline
+        if: matrix.profile == 'baseline'
+        run: arduino-cli compile --fqbn arduino:avr:uno --warnings all firmware/LineFollower
+      - name: Compile optional peripherals
+        if: matrix.profile == 'peripherals'
+        run: >-
+          arduino-cli compile --fqbn arduino:avr:uno --warnings all
+          --build-property "compiler.cpp.extra_flags=-DENABLE_ULTRASONIC=1 -DENABLE_COLOR=1"
+          firmware/LineFollower

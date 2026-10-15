@@ -1,0 +1,2 @@
+# Only needed for serial capture; analysis and tests use the standard library.
+pyserial==3.5

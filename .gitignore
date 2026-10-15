@@ -1,0 +1,33 @@
+# Local builds, downloaded toolchains and compiled artifacts
+/build/
+*.exe
+*.out
+*.o
+*.obj
+*.elf
+*.hex
+*.bin
+*.map
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Raw trial evidence is local; curated examples live in examples/.
+/logs/*
+!/logs/README.md
+
+# Machine-specific settings and secrets
+.env
+.env.*
+!.env.example
+arduino-cli.yaml
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
