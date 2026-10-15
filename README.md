@@ -2,7 +2,11 @@
 
 Arduino Uno firmware and analysis tools for a three-channel differential-drive line follower. The controller combines reflectance calibration, PD steering, dynamic PWM and bounded ambient compensation.
 
-**Status:** firmware builds and host tests pass. No hardware is available yet. Browser simulation is the next development milestone and is **not implemented in this repository yet**. The >98% tracking accuracy and >=30% deviation-reduction figures are experimental targets, not achieved results.
+**[Run the firmware demo in Wokwi](https://wokwi.com/projects/477942843163696129)**
+
+[![Wokwi firmware demo with Arduino Uno, three potentiometers and serial output](docs/images/wokwi-demo.png)](https://wokwi.com/projects/477942843163696129)
+
+Firmware builds and host tests pass. The Wokwi demo exercises calibration, steering and line-loss recovery using three adjustable sensor inputs. See the [demo instructions](docs/WOKWI.md). A moving-robot track simulation is the next milestone; the >98% tracking accuracy and >=30% deviation-reduction figures remain experimental targets.
 
 ## Features
 
@@ -66,6 +70,7 @@ You can also open `firmware/LineFollower/LineFollower.ino` in Arduino IDE and se
 
 ## Documentation
 
+- [Wokwi demo](docs/WOKWI.md) — project link, calibration steps and steering checks.
 - [Roadmap and specification](docs/ROADMAP.md) — simulation-first next steps and later hardware acceptance gates.
 - [Hardware and wiring](docs/HARDWARE.md) — selected Uno, QTR-3A and TB6612FNG configuration.
 - [Operation and telemetry](docs/USAGE.md) — calibration, commands and output schema.

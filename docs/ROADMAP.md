@@ -4,9 +4,9 @@ Updated 15 October 2026. This is the governing implementation and validation gui
 
 ## 0. Current priority: simulation-first development
 
-No hardware is currently available. The next milestone is a reproducible simulation, before physical Phases 1-5 below. Repository preparation and host tests are complete; the following simulation work is planned, not implemented:
+No hardware is currently available. Repository preparation and host tests are complete. The [Wokwi firmware demo](WOKWI.md) now covers the first simulation step, with user-confirmed calibration, steering and recovery checks. Closed-loop track modeling and comparative experiments remain the next milestones before physical Phases 1-5 below:
 
-1. Package an Uno firmware exercise for a browser simulator with controllable analog sensor inputs and observable motor outputs. Document substitute/custom components.
+1. Completed initial exercise: [Uno firmware in Wokwi](https://wokwi.com/projects/477942843163696129), using potentiometers as controllable analog inputs and telemetry for motor commands.
 2. Implement a closed-loop track model with robot motion, three reflectance channels and the same controller behavior. Record geometry, motor/sensor assumptions, timestep and random seeds.
 3. Run fixed/adaptive comparisons across curves, lighting offsets and noise, including failed runs. Derive ground truth from the simulated pose, not the controller's own error estimate.
 4. Publish reproducible scenarios, simulation-labeled results and limitations. Keep all numerical simulation claims separate from eventual hardware measurements.

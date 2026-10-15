@@ -1,6 +1,6 @@
 # Roadmap execution record — 15 October 2026
 
-Repository preparation: documentation moved under docs/, the original sketch under reference/, and the parser sample under examples/telemetry/. Portable host checks and GitHub Actions configuration have been added. Hosted CI has not run yet. No hardware is available; simulation is the next planned milestone and has not been implemented.
+Repository preparation: documentation moved under docs/, the original sketch under reference/, and the parser sample under examples/telemetry/. Portable host checks and GitHub Actions configuration have been added. No hardware is available. The [Wokwi firmware demo](WOKWI.md) now has user-confirmed calibration, steering and recovery checks; moving-robot track simulation is the next milestone.
 
 Packaging verification: all 12 Python tests and the C++ checks passed both in the workspace and in a clean copy containing only publishable files. Local Markdown links, publishable file sizes, basic credential/machine-path patterns, and ignore rules were checked. This was not a comprehensive secret audit. GitHub publication and hosted CI execution have not been performed.
 
